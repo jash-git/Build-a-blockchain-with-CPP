@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://www.360bchain.com/article/117.html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>一步步教小白使用C++构建区块链-B链网</title>
+  <meta name="keywords" content="B链网,B链,一步步教小白使用C++构建区块链">
+  <meta name="description" content="B链网-一步步教小白使用C++构建区块链">
+    
+  <link rel="shortcut icon" href="http://www.360bchain.com/favicon.ico" type="image/x-icon">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/bootstrap.min.css">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/head.css">
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/hot-lable.css">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/footer.css">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/normal.css">
+  
+  <link rel="stylesheet" href="./一步步教小白使用C++构建区块链-B链网_files/editormd.min.css">
+
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/blockquote.css">
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/article.css">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/share.css">
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/hot-lable.css">
+  
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/contribute.css">
+  <link rel="stylesheet" type="text/css" href="./一步步教小白使用C++构建区块链-B链网_files/footer.css">
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/jweixin-1.0.0.js.下載"></script> 
+  <script>
+     wx.config({
+			debug: false,
+			appId: 'wx955faf844c2de3be',
+			timestamp: 1544575532,
+			nonceStr: 'tq8MNpjNX6FmBmyj',
+			signature: '920acea63cea43084d968ee3fcb2b700dfdef521',
+			jsApiList: [
+				// 所有要调用的 API 都要加到这个列表中
+				'checkJsApi',
+				'openLocation',
+				'getLocation',
+                                'onMenuShareQQ',
+                                'onMenuShareQZone',
+				'onMenuShareTimeline',
+				'onMenuShareAppMessage'
+			]
+		});
+
+
+		wx.ready(function () {
+
+			wx.checkJsApi({
+				jsApiList: [
+					'getLocation',
+                                        'onMenuShareQQ',
+                                        'onMenuShareQZone',
+					'onMenuShareTimeline',
+					'onMenuShareAppMessage'
+				],
+				success: function (res) {
+				//	alert(JSON.stringify(res));
+				}
+			});
+
+wx.onMenuShareQQ({
+	title: '一步步教小白使用C++构建区块链-B链网',
+	desc: '一步步教小白使用C++构建区块链',
+	link: 'http://www.360bchain.com/article/117.html',
+	imgUrl: 'http://img.360bchain.com/pictures//KU/5af1a6f765bec.png',
+	success: function (res) {
+	//	alert('share');
+	},
+	cancel: function (res) {
+	//	alert('cancel');
+	}
+});
+
+wx.onMenuShareQZone({
+	title: '一步步教小白使用C++构建区块链-B链网',
+	desc: '一步步教小白使用C++构建区块链',
+	link: 'http://www.360bchain.com/article/117.html',
+	imgUrl: 'http://img.360bchain.com/pictures//KU/5af1a6f765bec.png',
+	success: function (res) {
+	//	alert('share');
+	},
+	cancel: function (res) {
+	//	alert('cancel');
+	}
+});
+
+			wx.onMenuShareAppMessage({
+				title: '一步步教小白使用C++构建区块链-B链网',
+				desc: '一步步教小白使用C++构建区块链',
+				link: 'http://www.360bchain.com/article/117.html',
+				imgUrl: 'http://img.360bchain.com/pictures//KU/5af1a6f765bec.png',
+				trigger: function (res) {
+				//	alert('send friends');
+				},
+				success: function (res) {
+				//	alert('share');
+				},
+				cancel: function (res) {
+				//	alert('cancel');
+				},
+				fail: function (res) {
+				//	alert(JSON.stringify(res));
+				}
+			});
+
+			wx.onMenuShareTimeline({
+				title: '一步步教小白使用C++构建区块链-B链网',
+				link: 'http://www.360bchain.com/article/117.html',
+				imgUrl: 'http://img.360bchain.com/pictures//KU/5af1a6f765bec.png',
+				trigger: function (res) {
+					// 不要尝试在trigger中使用ajax异步请求修改本次分享的内容，因为客户端分享操作是一个同步操作，这时候使用ajax的回包会还没有返回
+				//	alert('send friends scope');
+				},
+				success: function (res) {
+				//	alert('share');
+				},
+				cancel: function (res) {
+				//	alert('cancel');
+				},
+				fail: function (res) {
+				//	alert(JSON.stringify(res));
+				}
+			});
+		});
+  </script>
+
+
+<script src="./一步步教小白使用C++构建区块链-B链网_files/share.js.下載"></script><link type="text/css" rel="stylesheet" href="./一步步教小白使用C++构建区块链-B链网_files/katex.min.css"><script id="-cdnjs-cloudflare-com-ajax-libs-KaTeX-0-3-0-katex-min" type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/katex.min.js.下載"></script><link rel="stylesheet" href="./一步步教小白使用C++构建区块链-B链网_files/share_style1_24.css"><link rel="stylesheet" href="./一步步教小白使用C++构建区块链-B链网_files/share_popup.css"><link rel="stylesheet" href="./一步步教小白使用C++构建区块链-B链网_files/select_share.css"><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/imgshare.css?v=754091cd.css"><link rel="stylesheet" href="http://bdimg.share.baidu.com/static/api/css/share_style0_16.css?v=8105b07e.css"></head>
+<body>
+  
+    
+  <!-- ===============================导航条================================ -->
+
+  <nav class="topbar container-fluid navbar navbar-default">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand logo" href="http://www.360bchain.com/"><img src="./一步步教小白使用C++构建区块链-B链网_files/logo.png" alt="B链网" data-bd-imgshare-binded="1"></a>
+          </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="http://www.360bchain.com/">
+            <span class="glyphicon glyphicon-home"></span>
+            首页 <span class="sr-only">(current)</span>
+          </a>
+        </li>
+        <li>
+          <a href="http://www.360bchain.com/article/117.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-book"></span>
+            链新闻<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li> <a href="http://www.360bchain.com/category/11">链动态 </a> </li>
+            <li> <a href="http://www.360bchain.com/category/12">链投融</a></li>
+            <li> <a href="http://www.360bchain.com/category/13">链报告</a></li>
+          </ul>
+        </li>
+
+        <li>
+          <a href="http://www.360bchain.com/article/117.html#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <span class="glyphicon glyphicon-th-large"></span>
+            链技术<span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="http://www.360bchain.com/category/23">区块链</a></li>
+            <li><a href="http://www.360bchain.com/category/21">比特币</a></li>
+            <li><a href="http://www.360bchain.com/category/24">以太坊</a></li>
+            <li><a href="http://www.360bchain.com/category/22">超级账本</a></li>
+            <li><a href="http://www.360bchain.com/category/25">C++/GO</a></li>
+<!--
+            <li><a href="http://www.360bchain.com/category/5">GO/C++语言</a></li>
+            <li><a href="http://www.360bchain.com/category/8">智能合约</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="http://www.360bchain.com/category/6">共识算法</a></li>
+            <li><a href="http://www.360bchain.com/category/9">加密算法</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="http://www.360bchain.com/category/11">分布式存储</a></li>
+            <li><a href="http://www.360bchain.com/category/12">分布式数据库</a></li>
+-->
+          </ul>
+        </li>
+        <li>
+          <a href="http://forum.360bchain.com/?CategoryID=7" role="button" aria-haspopup="false" aria-expanded="false" target="_blank">
+            <span class="glyphicon glyphicon-folder-open"></span>
+            链资料
+          </a>
+        </li>
+        <li>
+          <a href="http://forum.360bchain.com/?CategoryID=10" role="button" aria-haspopup="false" aria-expanded="false" target="_blank">
+            <span class="glyphicon glyphicon-education"></span>
+            链学院
+          </a>
+        </li>
+        <li>
+          <a href="http://forum.360bchain.com/?CategoryID=9" role="button" aria-haspopup="false" aria-expanded="false" target="_blank">
+            <span class="glyphicon glyphicon-credit-card"></span>
+            链职业
+          </a>
+        </li>
+        <li>
+          <a href="http://forum.360bchain.com/" role="button" aria-haspopup="false" aria-expanded="false" target="_blank">
+            <span class="glyphicon glyphicon-user"></span>
+            链论坛
+          </a>
+        </li>
+        <li>
+          <a href="http://www.360bchain.com/experts.php" role="button" aria-haspopup="false" aria-expanded="false" target="_blank">
+            <span class="glyphicon glyphicon-fire"></span>
+            链顾问
+          </a>
+        </li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <a href="http://www.360bchain.com/contribute">
+            <span class="glyphicon glyphicon-edit"></span>
+            投稿
+          </a>
+        </li>
+          <li>
+            <a href="http://www.360bchain.com/article/117.html#" data-toggle="modal" data-target="#search">
+              <span class="glyphicon glyphicon-search"></span>
+              搜索
+            </a>
+          </li>
+        
+                  <li>
+            <a href="http://www.360bchain.com/article/117.html#" data-toggle="modal" data-target="#login">
+              <span class="glyphicon glyphicon-log-in"></span>
+              登录
+            </a>
+          </li>
+          <li>
+          <!--  <a href="#" data-toggle="modal" data-target="#reg"> -->
+            <a href="http://www.360bchain.com/register">
+            <span class="glyphicon glyphicon-plus-sign"></span>
+              注册
+            </a>
+          </li>      </ul>
+    </div>
+  </nav>
+
+  <!-- ===============================注册登录模态框================================ -->
+  <!-- 登录 -->
+  <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="logLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="logLabel">登录</h4>
+        </div>
+        <form class="form-horizontal" id="login-form">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="logEmail" class="col-sm-3 control-label">账号</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="logEmail" placeholder="请使用邮箱 / 个性域名登录">
+              </div>
+              <p class="col-sm-3 form-tip log-form-tip1 disnone">*邮箱不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <label for="logPassword" class="col-sm-3 control-label">密码</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="logPassword" placeholder="请输入您的登录密码">
+              </div>
+              <p class="col-sm-3 form-tip log-form-tip2 disnone">*密码不能为空</p>
+            </div>
+
+            <div class="form-group logAuthcode-group disnone">
+              <label for="logAuthcode" class="col-md-3 control-label">验证码：</label>
+              <div class="col-md-4">
+              <div class="input-group">
+                <input type="text" class="form-control" id="logAuthcode" placeholder="请输入验证码">
+              </div>
+              </div>
+                <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="authcodeBtn">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/login" onclick="this.src=&quot;/Api/getVerify/id/login?x=&quot;+Math.random();" alt="验证码" data-bd-imgshare-binded="1">
+                </button>
+                </span>
+              <p class="col-sm-3 form-tip log-form-tip3 disnone">*验证码不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-offset-3 col-sm-3">
+                <div class="checkbox">
+                  <label>
+                    <input id="log-checkbox" type="checkbox"> 记住我
+                  </label>
+                </div>
+              </div>
+
+              <div class="col-sm-offset-1 col-sm-3 forget">
+                <a href="http://www.360bchain.com/find">忘记密码</a>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            
+            <p class="log-tip pull-left disnone red"></p>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <input value="登录" type="button" class="btn btn-primary" id="login-btn">
+
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 注册 -->
+  <div class="modal fade" id="reg" tabindex="-1" role="dialog" aria-labelledby="regLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="regLabel">注册</h4>
+        </div>
+
+        <form class="form-horizontal" id="reg-form">
+          <input type="hidden" name="regToken" value="238a74c8e7c280a3ac75260ed06f4810">
+          <div class="modal-body">
+            <div class="form-group">
+              <label for="regName" class="col-sm-3 control-label">昵称</label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" id="regName" placeholder="请3-16字符长度的昵称">
+              </div>
+              <p class="col-sm-3 form-tip reg-form-tip1 disnone">*昵称不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <label for="regEmail" class="col-sm-3 control-label">邮箱</label>
+              <div class="col-sm-6">
+                <input type="email" class="form-control" id="regEmail" placeholder="请使用邮箱进行注册">
+              </div>
+              <p class="col-sm-3 form-tip reg-form-tip2 disnone">*邮箱不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <label for="regAuthcode" class="col-sm-3 control-label">验证码</label>
+              <div class="col-sm-6">
+                <div class="input-group">
+                  <input type="text" class="form-control" id="regAuthcode" placeholder="请输入验证码">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="button" id="btn-captcha">
+                              点击获取验证码
+                            </button>
+                  </span>
+                </div>
+              </div>
+              <p class="col-sm-3 form-tip reg-form-tip3 disnone">*验证码不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword1" class="col-sm-3 control-label">密码</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="regPassword1" placeholder="请设置您的登录密码">
+              </div>
+              <p class="col-sm-3 form-tip reg-form-tip4 disnone">*密码不能为空</p>
+            </div>
+
+            <div class="form-group">
+              <label for="regPassword2" class="col-sm-3 control-label">确认密码</label>
+              <div class="col-sm-6">
+                <input type="password" class="form-control" id="regPassword2" placeholder="请再次输入密码">
+              </div>
+              <p class="col-sm-3 form-tip reg-form-tip5 disnone">*密码不能为空</p>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            
+            <p class="reg-tip pull-left disnone red"></p>
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+            <input value="注册" type="button" class="btn btn-primary" id="register-btn">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 搜索 -->
+  <div class="modal fade" id="search" tabindex="-1" role="dialog" aria-labelledby="logLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+          <h4 class="modal-title" id="logLabel">搜索</h4>
+        </div>
+        <form class="form-horizontal" id="login-form" action="http://www.360bchain.com/search" method="get">
+          <div class="modal-body">
+            <div class="input-group col-sm-10 col-sm-offset-1 search">
+                  <input type="text" class="form-control" placeholder="请输入您所要搜索的内容" name="keyword">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                </span>
+              </div>
+            <!-- 热门标签 -->
+                        <div class="hot-lable">
+              <div class="lable-box">
+                <a href="http://www.360bchain.com/search/keyword/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>
+                <a href="http://www.360bchain.com/search/keyword/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6">智能合约</a>
+                <a href="http://www.360bchain.com/search/keyword/%E6%AF%94%E7%89%B9%E5%B8%81">比特币</a>
+                <a href="http://www.360bchain.com/search/keyword/%E4%BB%A5%E5%A4%AA%E5%9D%8A">以太坊</a>
+                <a href="http://www.360bchain.com/search/keyword/%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC">超级账本</a>
+              </div>
+            </div>          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>  <div class="main container">
+    <!-- 面包屑导航 -->
+    <ul class="nav nav-pills">
+          <li class="now-position"><strong>当前位置&nbsp;:</strong></li>
+          <li><a href="http://www.360bchain.com/">首页</a></li>
+          <li><a>&gt;</a></li>
+          <li><a href="http://www.360bchain.com/category/23">区块链</a></li>
+          <li><a>&gt;</a></li>
+          <li><a href="http://www.360bchain.com/article/117.html">一步步教小白使用C++构建区块链</a></li>
+    </ul>
+    <div class="articles container row">
+      <!-- 文章列表 -->
+      <div class="main-left col-md-8 col-xs-12 box">
+        <h2>
+                      <span class="article-lable-3">翻译</span>
+                    <strong>一步步教小白使用C++构建区块链</strong>
+        </h2>
+        
+
+        <p class="detail">
+          <a href="http://www.360bchain.com/u/c2e5d7abd3d4847a44d07a926988da64">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="num">文晓</span>
+          </a>
+          
+          <span class="glyphicon glyphicon-time"></span>
+          <span class="num">2018-05-08</span>
+          
+          <span class="glyphicon glyphicon-eye-open"></span>
+          <span class="num">2202</span>
+
+          <a id="btn-atriclepraise">
+                          <span class="glyphicon glyphicon-thumbs-up"></span>
+              <span class="num">0</span>          </a>
+          
+<!--
+          <a href="#comment">
+            <span class="glyphicon glyphicon-comment"></span>
+            <span class="num">0</span>
+          </a>
+-->
+
+          <a id="btn-favorite">
+                          <span class="glyphicon glyphicon-star-empty"></span>
+              <span class="num">0</span>          </a>
+
+        </p>
+        <hr>
+
+
+
+        <div id="layout">
+          <div id="test-editormd-view2" class="markdown-body editormd-html-preview">
+                      
+          <p>最近你可能听说过很多关于区块链的消息，想知道大家都在谈论什么。 <strong>区块链是一种分类账本，它的实现原理使得很难改变它所包含的数据；</strong>有人说区块链是不可改变的，它的目的是保持其正确的，不变性意味着永久性；但是硬盘上没有任何东西 永远可以被认为是永久性不变的；我们把这些哲学辩论留给非技术人员。而我现在要做的是向您展示如何使用C ++编写区块链。</p>
+<div class="markdown-toc editormd-markdown-toc"><ul class="markdown-toc-list"><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E5%8C%BA%E5%9D%97%E5%A4%B4%E7%BB%93%E6%9E%84" level="1">区块头结构</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E5%8C%BA%E5%9D%97%E9%93%BE%E5%A4%B4%E7%BB%93%E6%9E%84" level="1">区块链头结构</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E6%8C%96%E7%9F%BF%E8%BF%87%E7%A8%8B-%E5%B7%A5%E4%BD%9C%E9%87%8F%E8%AF%81%E6%98%8E" level="1">挖矿过程-工作量证明</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E5%8C%BA%E5%9D%97HASH%E8%AE%A1%E7%AE%97" level="1">区块HASH计算</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E5%88%9B%E4%B8%96%E5%9D%97%E7%9A%84%E4%BA%A7%E7%94%9F" level="1">创世块的产生</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E6%B7%BB%E5%8A%A0%E5%8C%BA%E5%9D%97" level="1">添加区块</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E4%B8%BB%E5%87%BD%E6%95%B0" level="1">主函数</a></li><li><a class="toc-level-1" href="http://www.360bchain.com/article/117.html#%E8%AF%B7%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%E6%BA%90%E7%A0%81" level="1">请点击下载源码</a><ul></ul></li></ul></div><p>免责声明</p>
+<ul>
+<li>本教程是参考Savjee使用NodeJS编写一篇文章;</li><li>有一段时间没有编写任何C ++代码，代码可能会有点生疏。（<em>译者注：运行该C++程序，可以生成区块并组成区块链，也具备工作量证明POW功能</em>）<br><img src="./一步步教小白使用C++构建区块链-B链网_files/5af1a2b0cab1b.png" alt="" data-bd-imgshare-binded="1"></li></ul>
+<p>首先要做的是打开一个新的C++项目，我使用JetBrains中的CLion，但任何C++ IDE甚至文本编辑器都可以（译者注：译者使用的是VIM）。 我们将创建TestChain项目，继续下一步创建项目。<br>如果您使用CLion，您会看到main.cpp文件已经创建并打开; 我们暂时不使用该主函数文件。<br>在主项目文件夹中创建一个名为Block.h的文件，您应该可以通过右键单击项目工具窗口中的TestChain目录并选择：New&gt;C/C ++ Header File来新建。<br>在文件内部，添加下面的代码（如果您使用CLion将所有代码放在#define TESTCHAIN_BLOCK_H和#endif的行之间)(译者注：防止头文件被重复调用)</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;cstdint&gt;</span></code></li><li class="L1"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;iostream&gt;</span></code></li></ol></pre>
+<p>上面语句的意思是告诉编译器包含cstdint和iostream库。<br>在它下面添加这一行：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span></code></li></ol></pre>
+<p>上面语句是为std命名空间创建了一个快捷方式。其作用是不需要通过其使用全名引用std命名空间中的声明，例如，如果有上面语句则书写string就可以使用字符串，否则需要使用全名访问字符串，如std::string。</p>
+<p>到现在为止感觉还挺好; 让我们进一步完善充实。</p>
+<p>区块链由一系列包含数据的区块组成，每个区块都包含前一区块的加密HASH，这就表示很难改变某一个区块的内容，而后面的区块内容也同样发生改变（<strong>译者注：如果改变中间某个区块的内容，则这个区块之后的所有区块的内容都需要被改变才有效</strong>）; 因此区块链被赋予了不变的特性。</p>
+<h1 id="h1-u533Au5757u5934u7ED3u6784"><a name="区块头结构" class="reference-link"></a><span class="header-link octicon octicon-link"></span>区块头结构</h1><p>接下来我们创建我们的块类，将以下几行添加到Block.h头文件中：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">class</span><span class="pln"> </span><span class="typ">Block</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="kwd">public</span><span class="pun">:</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    string sPrevHash</span><span class="pun">;</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    </span><span class="typ">Block</span><span class="pun">(</span><span class="typ">uint32_t</span><span class="pln"> nIndexIn</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> string </span><span class="pun">&amp;</span><span class="pln">sDataIn</span><span class="pun">);</span></code></li><li class="L5"><code class="lang-cpp"></code></li><li class="L6"><code class="lang-cpp"><span class="pln">    string </span><span class="typ">GetHash</span><span class="pun">();</span></code></li><li class="L7"><code class="lang-cpp"></code></li><li class="L8"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">MineBlock</span><span class="pun">(</span><span class="typ">uint32_t</span><span class="pln"> nDifficulty</span><span class="pun">);</span></code></li><li class="L9"><code class="lang-cpp"></code></li><li class="L0"><code class="lang-cpp"><span class="kwd">private</span><span class="pun">:</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    </span><span class="typ">uint32_t</span><span class="pln"> _nIndex</span><span class="pun">;</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    </span><span class="typ">int64_t</span><span class="pln"> _nNonce</span><span class="pun">;</span></code></li><li class="L3"><code class="lang-cpp"><span class="pln">    string _sData</span><span class="pun">;</span></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    string _sHash</span><span class="pun">;</span></code></li><li class="L5"><code class="lang-cpp"><span class="pln">    </span><span class="typ">time_t</span><span class="pln"> _tTime</span><span class="pun">;</span></code></li><li class="L6"><code class="lang-cpp"></code></li><li class="L7"><code class="lang-cpp"><span class="pln">    string </span><span class="typ">_CalculateHash</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">const</span><span class="pun">;</span></code></li><li class="L8"><code class="lang-cpp"><span class="pun">};</span></code></li></ol></pre>
+<p>不出所料，<br>第1行 类Block<br>第2行 公有修饰符 public<br>第3行 公有变量sPrevHash,保存区块的前一个区块<br>第5行 构造函数，需要的参数为nIndexIn和sDataIn<br>      const和&amp;一起使用，表示参数为引用传递，其值不可被修改，其目的是提高效率并且节省内存<br>第7行 GetHash()函数,获得HASH值<br>第9行 MineBlock()函数，挖矿，其参数nDifficulty表示指定的难度值<br>第11行 私有修饰符private，表示后面的变量为私有变量，不能被其他类访问<br>第12-16行 私有变量</p>
+<ul>
+<li>_nIndex 区块索引值，第几个区块，从0开始计算，</li><li>_nNonce 区块随机数，</li><li>_sData  区块描述字符</li><li>_sHash 区块HASH值</li><li>_tTime 区块生成时间</li></ul>
+<p>第18行 _CalculateHash()，计算HASH值。使用const关键字，是为了确保函数的输出不能被修改，这在处理区块链时非常有用。</p>
+<p>现在是在主项目文件夹中创建Blockchain.h头文件的时候了。<br>让我们开始添加这些行（如果您使用CLion将所有代码#define TESTCHAIN_BLOCKCHAIN_H 和 #endif之间）</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;cstdint&gt;</span></code></li><li class="L1"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">&lt;vector&gt;</span></code></li><li class="L2"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">"Block.h"</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="kwd">using</span><span class="pln"> </span><span class="kwd">namespace</span><span class="pln"> std</span><span class="pun">;</span></code></li></ol></pre>
+<p>上面语句告知编译器包含cstdint和vector向量库，以及调用我们刚创建的Block.h头文件，并创建std namespace快捷方式。</p>
+<h1 id="h1-u533Au5757u94FEu5934u7ED3u6784"><a name="区块链头结构" class="reference-link"></a><span class="header-link octicon octicon-link"></span>区块链头结构</h1><p>现在让我们创建区块链类，将以下代码行添加到Blockchain.h头文件中：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">class</span><span class="pln"> </span><span class="typ">Blockchain</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="kwd">public</span><span class="pun">:</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    </span><span class="typ">Blockchain</span><span class="pun">();</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">void</span><span class="pln"> </span><span class="typ">AddBlock</span><span class="pun">(</span><span class="typ">Block</span><span class="pln"> bNew</span><span class="pun">);</span></code></li><li class="L5"><code class="lang-cpp"></code></li><li class="L6"><code class="lang-cpp"><span class="kwd">private</span><span class="pun">:</span></code></li><li class="L7"><code class="lang-cpp"><span class="pln">    </span><span class="typ">uint32_t</span><span class="pln"> _nDifficulty</span><span class="pun">;</span></code></li><li class="L8"><code class="lang-cpp"><span class="pln">    </span><span class="typ">vector</span><span class="pun">&lt;</span><span class="typ">Block</span><span class="pun">&gt;</span><span class="pln"> _vChain</span><span class="pun">;</span></code></li><li class="L9"><code class="lang-cpp"></code></li><li class="L0"><code class="lang-cpp"><span class="pln">    </span><span class="typ">Block</span><span class="pln"> </span><span class="typ">_GetLastBlock</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">const</span><span class="pun">;</span></code></li><li class="L1"><code class="lang-cpp"><span class="pun">};</span></code></li></ol></pre>
+<p>第1行 创建区块链类<br>第2行 public修饰符<br>第3行 默认构造函数<br>第5行 AddBlock() 增加区块函数，参数为我们前面创建的Block类的对象bNew<br>第7行 private修饰符，后面的变量和方法是私有的<br>第8-9行 私有变量 </p>
+<ul>
+<li>_nDifficulty难度值</li><li>_vChain保存区块的变量<br>第11行 _GetLastBlock()获取最新的区块，由const关键字，表示输出的内容不可更改</li></ul>
+<p>因为区块链使用密码学，所以我们区块链需要一些加密函数。 我们将使用SHA256哈希来创建块的哈希值，（我们可以编写自己的SHA256函数，但是没必要重复造轮子），为了让编码更加简单，引用了来自<a href="http://www.zedwood.com/article/cpp-sha256-function" title="Zedwood">Zedwood</a>的C++ sha256函数，该链接中有sha256.h，sha256.cpp和LICENSE.txt文件，我们将它们保存在项目文件夹中。（译者注：<a href="http://forum.360bchain.com/comments.php?DiscussionID=128" title="可以使用译者提供的centos系统可以变编译运行的代码">可以使用译者提供的centos系统可以变编译运行的代码</a>）</p>
+<p>好的，让我们继续</p>
+<p>接下来我们的区块创建一个源文件Block.cpp并保存到主项目文件夹中<br>首先添加这些行，告诉编译器包含我们之前添加的Block.h和sha256.h文件。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">"Block.h"</span></code></li><li class="L1"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">"sha256.h"</span></code></li></ol></pre>
+<p>下面实现区块构造函数：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="typ">Block</span><span class="pun">::</span><span class="typ">Block</span><span class="pun">(</span><span class="typ">uint32_t</span><span class="pln"> nIndexIn</span><span class="pun">,</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> string </span><span class="pun">&amp;</span><span class="pln">sDataIn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">:</span><span class="pln"> _nIndex</span><span class="pun">(</span><span class="pln">nIndexIn</span><span class="pun">),</span><span class="pln"> _sData</span><span class="pun">(</span><span class="pln">sDataIn</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    _nNonce </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">1</span><span class="pun">;</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    _tTime </span><span class="pun">=</span><span class="pln"> time</span><span class="pun">(</span><span class="kwd">nullptr</span><span class="pun">);</span></code></li><li class="L3"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 将参数的内容赋值给变量_nIndex和_sData中。<br>第2行 _nNonce变量设置为-1。<br>第3行 _tTime变量设置为当前时间。</p>
+<p>实现访问区块的HASH函数：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="pln">string </span><span class="typ">Block</span><span class="pun">::</span><span class="typ">GetHash</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> _sHash</span><span class="pun">;</span></code></li><li class="L2"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第2行 返回私有变量_sHash的值</p>
+<p>您可能已经清楚，比特币数字货币中设计区块链技术非常受欢迎，使得分类账不能被修改或者保密;这意味着，当一个用户将比特币发送给另一个用户时，比特币网络上的节点将转账交易写到区块链中的一个区块中。另一台计算机作为一个节点运行比特币软件（因为比特币网络是P2P，所以该节点可以是世界上任何一个人运行）;这个过程被称为“挖矿”，每当他们在区块链上成功创建一个有效的区块时，该节点将获得相应的比特币奖励。</p>
+<p>如果想成功创建一个有效的区块并因此获得奖励，矿工必须创建一个有效的区块加密HASH添加到区块链中。 有效区块HASH是通过计算HASH开头零的数量来实现的；如果零的数量等于或大于网络设置的难度，则表示有效，否则将增加随机数后重新创建散列;直到生成一个有效的散列。 这个过程称为工作量证明（Proof of Work，PoW）。</p>
+<h1 id="h1--"><a name="挖矿过程-工作量证明" class="reference-link"></a><span class="header-link octicon octicon-link"></span>挖矿过程-工作量证明</h1><p>接下来，我们实现MineBlock方法来复现上述过程</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">void</span><span class="pln"> </span><span class="typ">Block</span><span class="pun">::</span><span class="typ">MineBlock</span><span class="pun">(</span><span class="typ">uint32_t</span><span class="pln"> nDifficulty</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">char</span><span class="pln"> cstr</span><span class="pun">[</span><span class="pln">nDifficulty </span><span class="pun">+</span><span class="pln"> </span><span class="lit">1</span><span class="pun">];</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">for</span><span class="pln"> </span><span class="pun">(</span><span class="typ">uint32_t</span><span class="pln"> i </span><span class="pun">=</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span><span class="pln"> i </span><span class="pun">&lt;</span><span class="pln"> nDifficulty</span><span class="pun">;</span><span class="pln"> </span><span class="pun">++</span><span class="pln">i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L3"><code class="lang-cpp"><span class="pln">        cstr</span><span class="pun">[</span><span class="pln">i</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'0'</span><span class="pun">;</span></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    </span><span class="pun">}</span></code></li><li class="L5"><code class="lang-cpp"><span class="pln">    cstr</span><span class="pun">[</span><span class="pln">nDifficulty</span><span class="pun">]</span><span class="pln"> </span><span class="pun">=</span><span class="pln"> </span><span class="str">'\0'</span><span class="pun">;</span></code></li><li class="L6"><code class="lang-cpp"></code></li><li class="L7"><code class="lang-cpp"><span class="pln">    string str</span><span class="pun">(</span><span class="pln">cstr</span><span class="pun">);</span></code></li><li class="L8"><code class="lang-cpp"></code></li><li class="L9"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L0"><code class="lang-cpp"><span class="pln">        _nNonce</span><span class="pun">++;</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">        _sHash </span><span class="pun">=</span><span class="pln"> </span><span class="typ">_CalculateHash</span><span class="pun">();</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    </span><span class="pun">}</span><span class="pln"> </span><span class="kwd">while</span><span class="pln"> </span><span class="pun">(</span><span class="pln">_sHash</span><span class="pun">.</span><span class="pln">substr</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> nDifficulty</span><span class="pun">)</span><span class="pln"> </span><span class="pun">!=</span><span class="pln"> str</span><span class="pun">);</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Block mined: "</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> _sHash </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span></code></li><li class="L5"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 MineBlock函数在block.h文件中声明，参数nDifficulty为难度<br>第2行 创建一个难度大于nDifficulty的值的字符数据<br>第3-6行 用0填充数组，最后一个字符填充为终止符\0<br>第8行 将字符数组转换为string字符串<br>第10-13行 循环增加随机数，并且计算HASH值保存到_sHash中。循环结束的条件是比较生成的HASH值和刚刚创建的零串，一旦匹配则跳出循环，否则继续生成HASH<br>第15行  一旦找到匹配，就会向输出发送该区块的HASH值，表示该块已成功开采。</p>
+<h1 id="h1--hash-"><a name="区块HASH计算" class="reference-link"></a><span class="header-link octicon octicon-link"></span>区块HASH计算</h1><p>我们前面已经看到它好几次，所以接下来添加_CalculateHash方法：</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">inline</span><span class="pln"> string </span><span class="typ">Block</span><span class="pun">::</span><span class="typ">_CalculateHash</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    stringstream ss</span><span class="pun">;</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    ss </span><span class="pun">&lt;&lt;</span><span class="pln"> _nIndex </span><span class="pun">&lt;&lt;</span><span class="pln"> _tTime </span><span class="pun">&lt;&lt;</span><span class="pln"> _sData </span><span class="pun">&lt;&lt;</span><span class="pln"> _nNonce </span><span class="pun">&lt;&lt;</span><span class="pln"> sPrevHash</span><span class="pun">;</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> sha256</span><span class="pun">(</span><span class="pln">ss</span><span class="pun">.</span><span class="pln">str</span><span class="pun">());</span></code></li><li class="L5"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 该函数在Block.h头文件中声明，inline关键字修饰，表示编译器编译时将该函数代码嵌入到其他函数中，减少了函数的调用开销（译者注：inline通常用在循环体内）<br>第2行 创建一个字符串流ss。<br>第3行 将_nIndex，_tTime，_sData，_nNonce和sPrevHash的值附加到流字符串流ss中。<br>第5行 将字符串流ss的sha256值输出</p>
+<p>增加区块链文件Blockchain.cpp到主项目文件夹中。</p>
+<p>下面的代码编译器包含添加的Blockchain.h文件。</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">"Blockchain.h"</span></code></li></ol></pre>
+<h1 id="h1-u521Bu4E16u5757u7684u4EA7u751F"><a name="创世块的产生" class="reference-link"></a><span class="header-link octicon octicon-link"></span>创世块的产生</h1><p>接下来，我们实现区块链构造函数</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="typ">Blockchain</span><span class="pun">::</span><span class="typ">Blockchain</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    _vChain</span><span class="pun">.</span><span class="pln">emplace_back</span><span class="pun">(</span><span class="typ">Block</span><span class="pun">(</span><span class="lit">0</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Genesis Block"</span><span class="pun">));</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    _nDifficulty </span><span class="pun">=</span><span class="pln"> </span><span class="lit">3</span><span class="pun">;</span></code></li><li class="L3"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 区块链构造函数，生成“创世块”。<br>因为将区块添加到区块链中时，需要添加前一个区块HASH值，所以区块链必须从某处开始，我们称最开始的那个区块为“创世块”。<br>第2行 将生成的区块放在向量_vChain中。<br>emplace_back()函数，在容器_vChain尾部添加一个元素，这个元素原地构造，不需要触发拷贝构造和转移构造。<br>第3行 设置工作量POW的难度值（即区块HASH前面有多少个零）</p>
+<h1 id="h1-u6DFBu52A0u533Au5757"><a name="添加区块" class="reference-link"></a><span class="header-link octicon octicon-link"></span>添加区块</h1><p>现在，我们实现区块增加函数</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="kwd">void</span><span class="pln"> </span><span class="typ">Blockchain</span><span class="pun">::</span><span class="typ">AddBlock</span><span class="pun">(</span><span class="typ">Block</span><span class="pln"> bNew</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    bNew</span><span class="pun">.</span><span class="pln">sPrevHash </span><span class="pun">=</span><span class="pln"> </span><span class="typ">_GetLastBlock</span><span class="pun">().</span><span class="typ">GetHash</span><span class="pun">();</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    bNew</span><span class="pun">.</span><span class="typ">MineBlock</span><span class="pun">(</span><span class="pln">_nDifficulty</span><span class="pun">);</span></code></li><li class="L3"><code class="lang-cpp"><span class="pln">    _vChain</span><span class="pun">.</span><span class="pln">push_back</span><span class="pun">(</span><span class="pln">bNew</span><span class="pun">);</span></code></li><li class="L4"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 该函数是在Blockchain.h文件中申明，参数为区块对象<br>第2行 将上一区块的hash值（_vChain的最后一个区块HASH值）保存到sPrevHash中<br>第3行 挖矿，参数为_nDifficulty难度值<br>第4行 将新挖的区块保存到_vChain向量的末尾</p>
+<p>让我们实现区块链的最后一个方法</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="typ">Block</span><span class="pln"> </span><span class="typ">Blockchain</span><span class="pun">::</span><span class="typ">_GetLastBlock</span><span class="pun">()</span><span class="pln"> </span><span class="kwd">const</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> _vChain</span><span class="pun">.</span><span class="pln">back</span><span class="pun">();</span></code></li><li class="L2"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>第1行 该函数是在Blockchain.h头文件中声明<br>第2行 返回向量_vChain的最后一个元素</p>
+<h1 id="h1-u4E3Bu51FDu6570"><a name="主函数" class="reference-link"></a><span class="header-link octicon octicon-link"></span>主函数</h1><p>新建main.cpp（挖掘三个区块后退出程序）</p>
+<pre class="prettyprint linenums prettyprinted" style=""><ol class="linenums"><li class="L0"><code class="lang-cpp"><span class="com">#include</span><span class="pln"> </span><span class="str">"Blockchain.h"</span></code></li><li class="L1"><code class="lang-cpp"><span class="typ">int</span><span class="pln"> main</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span></code></li><li class="L2"><code class="lang-cpp"><span class="pln">    </span><span class="typ">Blockchain</span><span class="pln"> bChain </span><span class="pun">=</span><span class="pln"> </span><span class="typ">Blockchain</span><span class="pun">();</span></code></li><li class="L3"><code class="lang-cpp"></code></li><li class="L4"><code class="lang-cpp"><span class="pln">    cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Mining block 1..."</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span></code></li><li class="L5"><code class="lang-cpp"><span class="pln">    bChain</span><span class="pun">.</span><span class="typ">AddBlock</span><span class="pun">(</span><span class="typ">Block</span><span class="pun">(</span><span class="lit">1</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Block 1 Data"</span><span class="pun">));</span></code></li><li class="L6"><code class="lang-cpp"></code></li><li class="L7"><code class="lang-cpp"><span class="pln">    cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Mining block 2..."</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span></code></li><li class="L8"><code class="lang-cpp"><span class="pln">    bChain</span><span class="pun">.</span><span class="typ">AddBlock</span><span class="pun">(</span><span class="typ">Block</span><span class="pun">(</span><span class="lit">2</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Block 2 Data"</span><span class="pun">));</span></code></li><li class="L9"><code class="lang-cpp"></code></li><li class="L0"><code class="lang-cpp"><span class="pln">    cout </span><span class="pun">&lt;&lt;</span><span class="pln"> </span><span class="str">"Mining block 3..."</span><span class="pln"> </span><span class="pun">&lt;&lt;</span><span class="pln"> endl</span><span class="pun">;</span></code></li><li class="L1"><code class="lang-cpp"><span class="pln">    bChain</span><span class="pun">.</span><span class="typ">AddBlock</span><span class="pun">(</span><span class="typ">Block</span><span class="pun">(</span><span class="lit">3</span><span class="pun">,</span><span class="pln"> </span><span class="str">"Block 3 Data"</span><span class="pun">));</span></code></li><li class="L2"><code class="lang-cpp"></code></li><li class="L3"><code class="lang-cpp"><span class="pln">    </span><span class="kwd">return</span><span class="pln"> </span><span class="lit">0</span><span class="pun">;</span></code></li><li class="L4"><code class="lang-cpp"><span class="pun">}</span></code></li></ol></pre>
+<p>源码目录结构以及编译情况<br><img src="./一步步教小白使用C++构建区块链-B链网_files/5af1b771797ed.png" alt="" data-bd-imgshare-binded="1"><br>挖矿过程<br><img src="./一步步教小白使用C++构建区块链-B链网_files/5af1b7a927aae.png" alt="" data-bd-imgshare-binded="1"></p>
+<h1 id="h1-u8BF7u70B9u51FBu4E0Bu8F7Du6E90u7801"><a name="请点击下载源码" class="reference-link"></a><span class="header-link octicon octicon-link"></span><a href="http://forum.360bchain.com/comments.php?DiscussionID=128" title="源码下载">请点击下载源码</a></h1><p>源码介绍文档请阅读<a href="http://www.360bchain.com/article/117.html" title="《一步步教小白使用C++构建区块链》">《一步步教小白使用C++构建区块链》</a></p>
+<p>作者：davenash<br>链接：<a href="http://davenash.com/2017/10/build-a-blockchain-with-c/">http://davenash.com/2017/10/build-a-blockchain-with-c/</a><br>版权声明：作者保留权利。文章为作者独立观点，不代表B链网立场。严禁修改，转载请注明原文链接</p>
+</div>
+          <div style="text-align: center;">
+            
+          </div>
+          <!-- 分享 -->
+          <div class="share-box">
+            <div class="bdsharebuttonbox bdshare-button-style1-24" data-bd-bind="1544575538698">
+              <a href="http://www.360bchain.com/article/117.html#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+              <a href="http://www.360bchain.com/article/117.html#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+              <a href="http://www.360bchain.com/article/117.html#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+              <a href="http://www.360bchain.com/article/117.html#" class="bds_more" data-cmd="more"></a>
+<!--
+              <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+              <a href="#" class="bds_tqq" data-cmd="tqq" title="分享到腾讯微博"></a>
+-->
+            </div>
+          </div>
+          <script>
+            window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"http://img.360bchain.com/pictures//KU/5af1a6f765bec.png","bdStyle":"1","bdSize":"24"},"share":{},"image":{"viewList":["weixin","sqq","qzone","tsina","tqq"],"viewText":"分享到：","viewSize":"16"},"selectShare":{"bdContainerClass":null,"bdSelectMiniList":["weixin","sqq","qzone","tsina","tqq"]}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];
+          </script>
+          
+        </div>
+
+
+        <!-- 评论区 -->
+        <div class="comment row" id="comment">
+          <div class="col-md-12">
+                          评论请先&nbsp;<a href="http://www.360bchain.com/article/117.html#" data-toggle="modal" data-target="#login">登录</a><br>
+              还没有账号？&nbsp;<a href="http://www.360bchain.com/article/117.html#" data-toggle="modal" data-target="#reg">注册</a>          </div>
+
+          <!-- 评论列表 -->
+          <div class="col-md-12 comment-list-box">
+                      </div>
+        </div>
+      </div>
+
+      <div class="main-right col-md-4 col-xs-12">
+        <!-- 作者 -->
+        <div class="writer-lable">
+          <blockquote>
+            <h3>B链作者</h3>
+          </blockquote>
+
+          <div class="writer-box">
+            <div class="thumbnail">
+              <a href="http://www.360bchain.com/u/c2e5d7abd3d4847a44d07a926988da64"><img src="./一步步教小白使用C++构建区块链-B链网_files/c2e5d7abd3d4847a44d07a926988da64_64.png" alt="文晓" class="center-block img-circle writer-img" data-bd-imgshare-binded="1"></a>
+              <div class="caption">
+                <h3 class="text-center"><span class="glyphicon glyphicon-user"></span><a href="http://www.360bchain.com/u/c2e5d7abd3d4847a44d07a926988da64">文晓</a></h3>
+                <p class="text-center"></p>
+
+                                  <a class="btn btn-primary pull-right attention" id="c2e5d7abd3d4847a44d07a926988da64" role="button">
+                    <span class="glyphicon glyphicon glyphicon-plus"></span>
+                    &nbsp;关注
+                  </a>
+                <div class="clearfix"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 热门标签 -->
+        <div class="hot-lable">
+          <blockquote>
+            <h3>热门标签</h3>
+          </blockquote>
+
+          <!-- 热门标签 -->
+                      <div class="hot-lable">
+              <div class="lable-box">
+                <a href="http://www.360bchain.com/search/keyword/%E5%8C%BA%E5%9D%97%E9%93%BE">区块链</a>
+                <a href="http://www.360bchain.com/search/keyword/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6">智能合约</a>
+                <a href="http://www.360bchain.com/search/keyword/%E6%AF%94%E7%89%B9%E5%B8%81">比特币</a>
+                <a href="http://www.360bchain.com/search/keyword/%E4%BB%A5%E5%A4%AA%E5%9D%8A">以太坊</a>
+                <a href="http://www.360bchain.com/search/keyword/%E8%B6%85%E7%BA%A7%E8%B4%A6%E6%9C%AC">超级账本</a>
+              </div>
+            </div>        </div>
+
+        <!-- 分享达人 -->
+        <!-- from cache Page_top_post_user-->        <!-- 分享达人 -->
+        <blockquote>
+            <h3>B链作者</h3>
+          </blockquote><table class="share table table-hover">
+          
+
+          <tbody><tr class="share-header">
+            <th>排名</th>
+            <th class="share-people" style="text-align:left;">   昵称</th>
+            <th style="text-align:center;">文章数</th>
+          </tr>
+          <tr>
+              <th class="share-num"><p><span class="hot1">1</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/454ad27e06eec949ce1d8d01f5f69d68" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/454ad27e06eec949ce1d8d01f5f69d68_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  EA Forest                </a>
+              </th>
+              <th class="share-num"><p>173</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot2">2</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/cc" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/c2e5d7abd3d4847a44d07a926988da64_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  文晓                </a>
+              </th>
+              <th class="share-num"><p>137</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot3">3</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/360qkl" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/2240a3ba4a0b3e1ff163b606b25f0120_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  360区块链                </a>
+              </th>
+              <th class="share-num"><p>135</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">4</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/cerry" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/54e2544645e8c4e53d480e37f30825eb_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  雨后的蚊子                </a>
+              </th>
+              <th class="share-num"><p>42</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">5</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/saodiseng" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/7caea0bd048d7f0b265a5936df15309a_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  扫地僧                </a>
+              </th>
+              <th class="share-num"><p>21</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">6</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/3c9aab9aa85e8d3e2fe4f1055d69996c" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/3c9aab9aa85e8d3e2fe4f1055d69996c_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  微笑向暖，安之若素                </a>
+              </th>
+              <th class="share-num"><p>3</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">7</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/8e719b9946fbc01486342679d1efd1c2" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/8e719b9946fbc01486342679d1efd1c2_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  我家门前有大路                </a>
+              </th>
+              <th class="share-num"><p>3</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">8</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/96cbd8ccfdb1470dcdccba12aa5aaf0d" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/96cbd8ccfdb1470dcdccba12aa5aaf0d_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  17318922179                </a>
+              </th>
+              <th class="share-num"><p>2</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">9</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/c1182289bc35da9e3628205b639444fd" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/c1182289bc35da9e3628205b639444fd_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  小黄虫great                </a>
+              </th>
+              <th class="share-num"><p>2</p></th>
+            </tr><tr>
+              <th class="share-num"><p><span class="hot">10</span></p></th>
+              <th>
+                <a href="http://www.360bchain.com/u/a12412ad5e73227841a92d6e4302f3b5" class="share-member">
+                  <img src="./一步步教小白使用C++构建区块链-B链网_files/a12412ad5e73227841a92d6e4302f3b5_40.png" alt="" class="img-circle" data-bd-imgshare-binded="1">
+                  灵if123else                </a>
+              </th>
+              <th class="share-num"><p>1</p></th>
+            </tr>        </tbody></table>      </div>
+    </div>
+  </div>
+
+    
+  <div class="footer container" style="position: static;">
+    
+<!--
+    <ul class="friend">
+      <li><a href="http://luqin.shujuren.org" target="_blank" rel="nofollow">B链网陆勤</a></li>
+      <li><a href="https://www.quora.com" target="_blank" rel="nofollow">Quora问答</a></li>
+      <li><a href="http://www.apache.org" target="_blank" rel="nofollow">Apache项目</a></li>
+      <li><a href="https://www.r-project.org" target="_blank" rel="nofollow">R语言</a></li>
+      <li><a href="https://www.python.org" target="_blank" rel="nofollow">Python语言</a></li>
+    </ul>
+    <br>
+    <br>
+    <ul>
+      <li><a href="http://www.360bchain.com/about">关于本站</a></li>
+      <li><a href="http://www.360bchain.com/team" class="no-border">团队介绍</a></li>
+      <li><a href="http://www.360bchain.com/contact">联系我们</a></li>
+      <li><a href="http://www.360bchain.com/joinus" class="no-border">加入我们</a></li>
+      <li><a href="http://www.360bchain.com/copyright">版权声明</a></li>
+      <li><a href="http://www.360bchain.com/sitemap" class="no-border">网站地图</a></li>
+      <li class="q hidden-xs">
+        <a href="javascript:;" class="no"><img src="/Public/images/qq-small.png" class="qq-s"></a>
+        <div class="er">
+          <ul>
+            <li>GO语言：**********</li>
+          </ul>
+        </div>
+      </li>
+      <li class="wechat hidden-xs">
+        <a href="javascript:;" class="no">
+          <img src="/Public/images/wechat.png">
+        </a>
+        <div class="er">
+          <img src="/Public/images/gongzhonghao.jpg"/>
+        </div>
+      </li>
+      
+
+      <div class="clear">
+      </div>
+    </ul>
+-->
+    <p class="text-center" style="font-size:12px" "="">版权所有&nbsp;广州链信科技有限公司</p>
+    <p class="text-center" style="font-size:12px" "="">©2018-2018&nbsp;<a href="http://www.360bchain.com/">B链网</a><a href="http://www.miibeian.gov.cn/" target="_blank">粤ICP备17165875号&nbsp;&nbsp;</a>
+<!--
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273347998'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273347998%26online%3D1%26show%3Dline' type='text/javascript'%3E%3C/script%3E"));</script>
+-->
+<!--
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273347998'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273347998%26online%3D2' type='text/javascript'%3E%3C/script%3E"));</script>
+-->
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1273347998'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s13.cnzz.com/z_stat.php%3Fid%3D1273347998%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));</script><span id="cnzz_stat_icon_1273347998"><a href="http://www.cnzz.com/stat/website.php?web_id=1273347998" target="_blank" title="站长统计"><img border="0" hspace="0" vspace="0" src="./一步步教小白使用C++构建区块链-B链网_files/pic1.gif" data-bd-imgshare-binded="1"></a></span><script src="./一步步教小白使用C++构建区块链-B链网_files/z_stat.php" type="text/javascript"></script><script src="./一步步教小白使用C++构建区块链-B链网_files/core.php" charset="utf-8" type="text/javascript"></script>
+    </p>
+  </div>
+    
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/jquery.min.js.下載"></script>
+  
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/bootstrap.min.js.下載"></script>
+
+  
+  <script type="text/javascript">
+    var headMessageUrl="http://www.360bchain.com/Usercenter/getUnreadCount"//导航栏头像消息通知接口
+
+    var logUrl="http://www.360bchain.com/Login/userLogin";//登录验证表单地址
+
+    var checkUrl="http://www.360bchain.com/Login/checkRegForm";//注册表单唯一性验证地址
+    var regUrl="http://www.360bchain.com/Login/userRegister";//注册验证表单地址
+    var captchaUrl="http://www.360bchain.com/Api/requestSendEmail";//注册邮件验证码发送请求地址
+
+    var loadMoreUrl="http://www.360bchain.com/Index/getMoreArticle";//点击加载更多的接口
+
+    var favoriteArticleUrl="http://www.360bchain.com/Articlemanager/favoriteArticle";//文章收藏接口地址
+    var cancelFavoriteUrl="http://www.360bchain.com/Insideapi/cancelFavorite";//文章取消收藏接口
+
+    var praiseArticleUrl="http://www.360bchain.com/Articlemanager/praiseArticle"//文章点赞接口
+    var cancelArticlePraiseUrl="http://www.360bchain.com/Insideapi/cancelArticlePraise";//文章取消赞接口
+    
+    var praiseCommentUrl="http://www.360bchain.com/Articlemanager/praiseComment";//评论点赞接口
+    var cancelCommentPraiseUrl="http://www.360bchain.com/Insideapi/cancelCommentPraise";//评论取消点赞接口
+
+    var followMeUrl="http://www.360bchain.com/Userindex/followMe";//关注接口
+    var cancelFollowUrl="http://www.360bchain.com/Insideapi/cancelFollow";//取消关注接口
+
+    var markReadUrl="http://www.360bchain.com/Insideapi/markReadbyType";//评论标记已读接口
+
+    var accountUrl="/Api/requestSendEmail.html";//邮件发送接口
+    var updateEmailUrl="http://www.360bchain.com/Usercenter/updateEmail";//更改绑定邮箱接口
+
+    var findUrl="http://www.360bchain.com/Login/find";//找回密码接口
+
+    var verifyOldAccountUrl="http://www.360bchain.com/Index/verifyOldAccount";
+
+    var reviseData="http://www.360bchain.com/Usercenter/basic";//修改个人资料接口
+  </script>
+  
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/log.js.下載"></script>  
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/TopBar.js.下載"></script>
+  
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/footer.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/editormd.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/marked.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/prettify.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/raphael.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/underscore.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/sequence-diagram.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/flowchart.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/jquery.flowchart.min.js.下載"></script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/article.js.下載"></script>
+  <script type="text/javascript">
+    
+    $("#article-waiting").remove();
+    $(function() {
+      var testEditormdView;
+      testEditormdView = editormd.markdownToHTML("test-editormd-view2", {
+        htmlDecode      : "style,script,iframe",  // you can filter tags decode
+        emoji           : true,
+        taskList        : true,
+        tex             : true,  // 默认不解析
+        flowChart       : true,  // 默认不解析
+        sequenceDiagram : true,  // 默认不解析
+      });
+    });
+  </script>
+  <script src="./一步步教小白使用C++构建区块链-B链网_files/detail.js.下載"></script>
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/attention.js.下載"></script>
+  <script type="text/javascript" src="./一步步教小白使用C++构建区块链-B链网_files/footer.js.下載"></script>
+  
+
+<iframe frameborder="0" id="bdSharePopup_selectshare1544575538702bg" class="bdselect_share_bg" style="display:none;" src="./一步步教小白使用C++构建区块链-B链网_files/saved_resource.html"></iframe><div id="bdSharePopup_selectshare1544575538702box" style="display: none;" share-type="selectshare" class="bdselect_share_box" data-bd-bind="1544575538702"><div class="selectshare-mod-triangle"><div class="triangle-border"></div><div class="triangle-inset"></div></div><div class="bdselect_share_head"><span>分享到</span><a href="http://www.baidu.com/s?wd=&amp;tn=SE_hldp08010_vurs2xrp" class="bdselect_share_dialog_search" target="_blank"><i class="bdselect_share_dialog_search_i"></i><span class="bdselect_share_dialog_search_span">百度一下</span></a><a class="bdselect_share_dialog_close"></a></div><div class="bdselect_share_content"><ul class="bdselect_share_list bdshare-button-style1-24"><div class="bdselect_share_partners"><a href="http://www.360bchain.com/article/117.html#" class="bds_weixin" data-cmd="weixin"></a><a href="http://www.360bchain.com/article/117.html#" class="bds_sqq" data-cmd="sqq"></a><a href="http://www.360bchain.com/article/117.html#" class="bds_qzone" data-cmd="qzone"></a><a href="http://www.360bchain.com/article/117.html#" class="bds_tsina" data-cmd="tsina"></a><a href="http://www.360bchain.com/article/117.html#" class="bds_tqq" data-cmd="tqq"></a></div><a href="http://www.360bchain.com/article/117.html#" class="bds_more" data-cmd="more"></a></ul></div></div><div id="bdimgshare_1544575538706" class="sr-bdimgshare sr-bdimgshare-list sr-bdimgshare-16 sr-bdimgshare-black" style="height: 36px; line-height: 26px; font-size: 12px; position: absolute; top: 689px; left: 414.5px; width: 435px; display: none;" data-bd-bind="1544575538706"><div class="bdimgshare-bg"></div><div class="bdimgshare-content bdsharebuttonbox bdshare-button-style0-16"><label class="bdimgshare-lbl">分享到：</label><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_weixin" data-cmd="weixin" hidefocus=""></a><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_sqq" data-cmd="sqq" hidefocus=""></a><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_qzone" data-cmd="qzone" hidefocus=""></a><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_tsina" data-cmd="tsina" hidefocus=""></a><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_tqq" data-cmd="tqq" hidefocus=""></a><a href="http://www.360bchain.com/article/117.html#" onclick="return false;" class="bds_more" data-cmd="more" hidefocus=""></a></div></div></body></html>
